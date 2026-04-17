@@ -4,13 +4,13 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-04-13)
+## Unreleased (2026-04-17)
 
 <section class="features">
 
 ### Features
 
--   [`887cfd3`](https://github.com/stdlib-js/stdlib/commit/887cfd3b5f509a8e2cd39373d4d2310e4daae841) - add `stats/strided/nancount` [(#11057)](https://github.com/stdlib-js/stdlib/pull/11057)
+-   [`c84f0ca`](https://github.com/stdlib-js/stdlib/commit/c84f0caa56429dc035cfb22a105d62a3178b5c87) - add `blas/ext/base/gnancount`
 
 </section>
 
@@ -22,7 +22,7 @@
 
 <details>
 
--   [`887cfd3`](https://github.com/stdlib-js/stdlib/commit/887cfd3b5f509a8e2cd39373d4d2310e4daae841) - **feat:** add `stats/strided/nancount` [(#11057)](https://github.com/stdlib-js/stdlib/pull/11057) _(by Om-A-osc, Athan Reines)_
+-   [`c84f0ca`](https://github.com/stdlib-js/stdlib/commit/c84f0caa56429dc035cfb22a105d62a3178b5c87) - **feat:** add `blas/ext/base/gnancount` _(by Athan Reines)_
 
 </details>
 
@@ -34,10 +34,9 @@
 
 ### Contributors
 
-A total of 2 people contributed to this release. Thank you to the following contributors:
+A total of 1 person contributed to this release. Thank you to this contributor:
 
 -   Athan Reines
--   Om-A-osc
 
 </section>
 

@@ -21,18 +21,18 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var nancount = require( './../lib' );
+var gnancount = require( './../lib' );
 
 
 // TESTS //
 
 tape( 'main export is a function', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof nancount, 'function', 'main export is a function' );
+	t.strictEqual( typeof gnancount, 'function', 'main export is a function' );
 	t.end();
 });
 
 tape( 'attached to the main export is a method providing an ndarray interface', function test( t ) {
-	t.strictEqual( typeof nancount.ndarray, 'function', 'method is a function' );
+	t.strictEqual( typeof gnancount.ndarray, 'function', 'method is a function' );
 	t.end();
 });

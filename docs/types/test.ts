@@ -17,7 +17,7 @@
 */
 
 import AccessorArray = require( '@stdlib/array-base-accessor' );
-import nancount = require( './index' );
+import gnancount = require( './index' );
 
 
 // TESTS //
@@ -26,133 +26,133 @@ import nancount = require( './index' );
 {
 	const x = new Float64Array( 10 );
 
-	nancount( x.length, x, 1 ); // $ExpectType number
-	nancount( x.length, new AccessorArray( x ), 1 ); // $ExpectType number
+	gnancount( x.length, x, 1 ); // $ExpectType number
+	gnancount( x.length, new AccessorArray( x ), 1 ); // $ExpectType number
 }
 
 // The compiler throws an error if the function is provided a first argument which is not a number...
 {
 	const x = new Float64Array( 10 );
 
-	nancount( '10', x, 1 ); // $ExpectError
-	nancount( true, x, 1 ); // $ExpectError
-	nancount( false, x, 1 ); // $ExpectError
-	nancount( null, x, 1 ); // $ExpectError
-	nancount( undefined, x, 1 ); // $ExpectError
-	nancount( [], x, 1 ); // $ExpectError
-	nancount( {}, x, 1 ); // $ExpectError
-	nancount( ( x: number ): number => x, x, 1 ); // $ExpectError
+	gnancount( '10', x, 1 ); // $ExpectError
+	gnancount( true, x, 1 ); // $ExpectError
+	gnancount( false, x, 1 ); // $ExpectError
+	gnancount( null, x, 1 ); // $ExpectError
+	gnancount( undefined, x, 1 ); // $ExpectError
+	gnancount( [], x, 1 ); // $ExpectError
+	gnancount( {}, x, 1 ); // $ExpectError
+	gnancount( ( x: number ): number => x, x, 1 ); // $ExpectError
 }
 
 // The compiler throws an error if the function is provided a second argument which is not a numeric array...
 {
 	const x = new Float64Array( 10 );
 
-	nancount( x.length, 10, 1 ); // $ExpectError
-	nancount( x.length, '10', 1 ); // $ExpectError
-	nancount( x.length, true, 1 ); // $ExpectError
-	nancount( x.length, false, 1 ); // $ExpectError
-	nancount( x.length, null, 1 ); // $ExpectError
-	nancount( x.length, undefined, 1 ); // $ExpectError
-	nancount( x.length, {}, 1 ); // $ExpectError
-	nancount( x.length, ( x: number ): number => x, 1 ); // $ExpectError
+	gnancount( x.length, 10, 1 ); // $ExpectError
+	gnancount( x.length, '10', 1 ); // $ExpectError
+	gnancount( x.length, true, 1 ); // $ExpectError
+	gnancount( x.length, false, 1 ); // $ExpectError
+	gnancount( x.length, null, 1 ); // $ExpectError
+	gnancount( x.length, undefined, 1 ); // $ExpectError
+	gnancount( x.length, {}, 1 ); // $ExpectError
+	gnancount( x.length, ( x: number ): number => x, 1 ); // $ExpectError
 }
 
 // The compiler throws an error if the function is provided a third argument which is not a number...
 {
 	const x = new Float64Array( 10 );
 
-	nancount( x.length, x, '10' ); // $ExpectError
-	nancount( x.length, x, true ); // $ExpectError
-	nancount( x.length, x, false ); // $ExpectError
-	nancount( x.length, x, null ); // $ExpectError
-	nancount( x.length, x, undefined ); // $ExpectError
-	nancount( x.length, x, [] ); // $ExpectError
-	nancount( x.length, x, {} ); // $ExpectError
-	nancount( x.length, x, ( x: number ): number => x ); // $ExpectError
+	gnancount( x.length, x, '10' ); // $ExpectError
+	gnancount( x.length, x, true ); // $ExpectError
+	gnancount( x.length, x, false ); // $ExpectError
+	gnancount( x.length, x, null ); // $ExpectError
+	gnancount( x.length, x, undefined ); // $ExpectError
+	gnancount( x.length, x, [] ); // $ExpectError
+	gnancount( x.length, x, {} ); // $ExpectError
+	gnancount( x.length, x, ( x: number ): number => x ); // $ExpectError
 }
 
 // The compiler throws an error if the function is provided an unsupported number of arguments...
 {
 	const x = new Float64Array( 10 );
 
-	nancount(); // $ExpectError
-	nancount( x.length ); // $ExpectError
-	nancount( x.length, x ); // $ExpectError
-	nancount( x.length, x, 1, 10 ); // $ExpectError
+	gnancount(); // $ExpectError
+	gnancount( x.length ); // $ExpectError
+	gnancount( x.length, x ); // $ExpectError
+	gnancount( x.length, x, 1, 10 ); // $ExpectError
 }
 
 // Attached to main export is an `ndarray` method which returns a number...
 {
 	const x = new Float64Array( 10 );
 
-	nancount.ndarray( x.length, x, 1, 0 ); // $ExpectType number
-	nancount.ndarray( x.length, new AccessorArray( x ), 1, 0 ); // $ExpectType number
+	gnancount.ndarray( x.length, x, 1, 0 ); // $ExpectType number
+	gnancount.ndarray( x.length, new AccessorArray( x ), 1, 0 ); // $ExpectType number
 }
 
 // The compiler throws an error if the `ndarray` method is provided a first argument which is not a number...
 {
 	const x = new Float64Array( 10 );
 
-	nancount.ndarray( '10', x, 1, 0 ); // $ExpectError
-	nancount.ndarray( true, x, 1, 0 ); // $ExpectError
-	nancount.ndarray( false, x, 1, 0 ); // $ExpectError
-	nancount.ndarray( null, x, 1, 0 ); // $ExpectError
-	nancount.ndarray( undefined, x, 1, 0 ); // $ExpectError
-	nancount.ndarray( [], x, 1, 0 ); // $ExpectError
-	nancount.ndarray( {}, x, 1, 0 ); // $ExpectError
-	nancount.ndarray( ( x: number ): number => x, x, 1, 0 ); // $ExpectError
+	gnancount.ndarray( '10', x, 1, 0 ); // $ExpectError
+	gnancount.ndarray( true, x, 1, 0 ); // $ExpectError
+	gnancount.ndarray( false, x, 1, 0 ); // $ExpectError
+	gnancount.ndarray( null, x, 1, 0 ); // $ExpectError
+	gnancount.ndarray( undefined, x, 1, 0 ); // $ExpectError
+	gnancount.ndarray( [], x, 1, 0 ); // $ExpectError
+	gnancount.ndarray( {}, x, 1, 0 ); // $ExpectError
+	gnancount.ndarray( ( x: number ): number => x, x, 1, 0 ); // $ExpectError
 }
 
 // The compiler throws an error if the `ndarray` method is provided a second argument which is not a numeric array...
 {
 	const x = new Float64Array( 10 );
 
-	nancount.ndarray( x.length, 10, 1, 0 ); // $ExpectError
-	nancount.ndarray( x.length, '10', 1, 0 ); // $ExpectError
-	nancount.ndarray( x.length, true, 1, 0 ); // $ExpectError
-	nancount.ndarray( x.length, false, 1, 0 ); // $ExpectError
-	nancount.ndarray( x.length, null, 1, 0 ); // $ExpectError
-	nancount.ndarray( x.length, undefined, 1, 0 ); // $ExpectError
-	nancount.ndarray( x.length, {}, 1, 0 ); // $ExpectError
-	nancount.ndarray( x.length, ( x: number ): number => x, 1, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, 10, 1, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, '10', 1, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, true, 1, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, false, 1, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, null, 1, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, undefined, 1, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, {}, 1, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, ( x: number ): number => x, 1, 0 ); // $ExpectError
 }
 
 // The compiler throws an error if the `ndarray` method is provided a third argument which is not a number...
 {
 	const x = new Float64Array( 10 );
 
-	nancount.ndarray( x.length, x, '10', 0 ); // $ExpectError
-	nancount.ndarray( x.length, x, true, 0 ); // $ExpectError
-	nancount.ndarray( x.length, x, false, 0 ); // $ExpectError
-	nancount.ndarray( x.length, x, null, 0 ); // $ExpectError
-	nancount.ndarray( x.length, x, undefined, 0 ); // $ExpectError
-	nancount.ndarray( x.length, x, [], 0 ); // $ExpectError
-	nancount.ndarray( x.length, x, {}, 0 ); // $ExpectError
-	nancount.ndarray( x.length, x, ( x: number ): number => x, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, x, '10', 0 ); // $ExpectError
+	gnancount.ndarray( x.length, x, true, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, x, false, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, x, null, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, x, undefined, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, x, [], 0 ); // $ExpectError
+	gnancount.ndarray( x.length, x, {}, 0 ); // $ExpectError
+	gnancount.ndarray( x.length, x, ( x: number ): number => x, 0 ); // $ExpectError
 }
 
 // The compiler throws an error if the `ndarray` method is provided a fourth argument which is not a number...
 {
 	const x = new Float64Array( 10 );
 
-	nancount.ndarray( x.length, x, 1, '10' ); // $ExpectError
-	nancount.ndarray( x.length, x, 1, true ); // $ExpectError
-	nancount.ndarray( x.length, x, 1, false ); // $ExpectError
-	nancount.ndarray( x.length, x, 1, null ); // $ExpectError
-	nancount.ndarray( x.length, x, 1, undefined ); // $ExpectError
-	nancount.ndarray( x.length, x, 1, [] ); // $ExpectError
-	nancount.ndarray( x.length, x, 1, {} ); // $ExpectError
-	nancount.ndarray( x.length, x, 1, ( x: number ): number => x ); // $ExpectError
+	gnancount.ndarray( x.length, x, 1, '10' ); // $ExpectError
+	gnancount.ndarray( x.length, x, 1, true ); // $ExpectError
+	gnancount.ndarray( x.length, x, 1, false ); // $ExpectError
+	gnancount.ndarray( x.length, x, 1, null ); // $ExpectError
+	gnancount.ndarray( x.length, x, 1, undefined ); // $ExpectError
+	gnancount.ndarray( x.length, x, 1, [] ); // $ExpectError
+	gnancount.ndarray( x.length, x, 1, {} ); // $ExpectError
+	gnancount.ndarray( x.length, x, 1, ( x: number ): number => x ); // $ExpectError
 }
 
 // The compiler throws an error if the `ndarray` method is provided an unsupported number of arguments...
 {
 	const x = new Float64Array( 10 );
 
-	nancount.ndarray(); // $ExpectError
-	nancount.ndarray( x.length ); // $ExpectError
-	nancount.ndarray( x.length, x ); // $ExpectError
-	nancount.ndarray( x.length, x, 1 ); // $ExpectError
-	nancount.ndarray( x.length, x, 1, 0, 10 ); // $ExpectError
+	gnancount.ndarray(); // $ExpectError
+	gnancount.ndarray( x.length ); // $ExpectError
+	gnancount.ndarray( x.length, x ); // $ExpectError
+	gnancount.ndarray( x.length, x, 1 ); // $ExpectError
+	gnancount.ndarray( x.length, x, 1, 0, 10 ); // $ExpectError
 }

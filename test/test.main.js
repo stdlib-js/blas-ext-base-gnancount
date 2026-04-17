@@ -23,19 +23,19 @@
 var tape = require( 'tape' );
 var toAccessorArray = require( '@stdlib/array-base-to-accessor-array' );
 var Float64Array = require( '@stdlib/array-float64' );
-var nancount = require( './../lib/main.js' );
+var gnancount = require( './../lib/main.js' );
 
 
 // TESTS //
 
 tape( 'main export is a function', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof nancount, 'function', 'main export is a function' );
+	t.strictEqual( typeof gnancount, 'function', 'main export is a function' );
 	t.end();
 });
 
 tape( 'the function has an arity of 3', function test( t ) {
-	t.strictEqual( nancount.length, 3, 'has expected arity' );
+	t.strictEqual( gnancount.length, 3, 'has expected arity' );
 	t.end();
 });
 
@@ -44,19 +44,19 @@ tape( 'the function counts the number of non-`NaN` elements in a  strided array'
 	var v;
 
 	x = [ 1.0, -2.0, -4.0, 5.0, 0.0, 3.0, NaN, NaN ];
-	v = nancount( x.length, x, 1 );
+	v = gnancount( x.length, x, 1 );
 	t.strictEqual( v, 6, 'returns expected value' );
 
 	x = [ -4.0, NaN, -5.0 ];
-	v = nancount( x.length, x, 1 );
+	v = gnancount( x.length, x, 1 );
 	t.strictEqual( v, 2, 'returns expected value' );
 
 	x = [ NaN ];
-	v = nancount( x.length, x, 1 );
+	v = gnancount( x.length, x, 1 );
 	t.strictEqual( v, 0, 'returns expected value' );
 
 	x = [ NaN, NaN ];
-	v = nancount( x.length, x, 1 );
+	v = gnancount( x.length, x, 1 );
 	t.strictEqual( v, 0, 'returns expected value' );
 
 	t.end();
@@ -67,15 +67,15 @@ tape( 'the function counts the number of non-`NaN` elements in a  strided array 
 	var v;
 
 	x = [ 1.0, -2.0, -4.0, 5.0, 0.0, 3.0, NaN, NaN ];
-	v = nancount( x.length, toAccessorArray( x ), 1 );
+	v = gnancount( x.length, toAccessorArray( x ), 1 );
 	t.strictEqual( v, 6, 'returns expected value' );
 
 	x = [ -4.0, NaN, -5.0 ];
-	v = nancount( x.length, toAccessorArray( x ), 1 );
+	v = gnancount( x.length, toAccessorArray( x ), 1 );
 	t.strictEqual( v, 2, 'returns expected value' );
 
 	x = [ NaN ];
-	v = nancount( x.length, toAccessorArray( x ), 1 );
+	v = gnancount( x.length, toAccessorArray( x ), 1 );
 	t.strictEqual( v, 0, 'returns expected value' );
 
 	t.end();
@@ -87,10 +87,10 @@ tape( 'if provided an `N` parameter less than or equal to `0`, the function retu
 
 	x = [ 1.0, -2.0, -4.0, 5.0, 3.0 ];
 
-	v = nancount( 0, x, 1 );
+	v = gnancount( 0, x, 1 );
 	t.strictEqual( v, 0, 'returns expected value' );
 
-	v = nancount( -1, x, 1 );
+	v = gnancount( -1, x, 1 );
 	t.strictEqual( v, 0, 'returns expected value' );
 
 	t.end();
@@ -113,7 +113,7 @@ tape( 'the function supports a `stride` parameter', function test( t ) {
 		NaN
 	];
 
-	v = nancount( 5, x, 2 );
+	v = gnancount( 5, x, 2 );
 
 	t.strictEqual( v, 4, 'returns expected value' );
 	t.end();
@@ -136,7 +136,7 @@ tape( 'the function supports a `stride` parameter (accessors)', function test( t
 		NaN
 	];
 
-	v = nancount( 5, toAccessorArray( x ), 2 );
+	v = gnancount( 5, toAccessorArray( x ), 2 );
 
 	t.strictEqual( v, 4, 'returns expected value' );
 	t.end();
@@ -159,7 +159,7 @@ tape( 'the function supports a negative `stride` parameter', function test( t ) 
 		2.0
 	];
 
-	v = nancount( 5, x, -2 );
+	v = gnancount( 5, x, -2 );
 
 	t.strictEqual( v, 4, 'returns expected value' );
 	t.end();
@@ -182,7 +182,7 @@ tape( 'the function supports a negative `stride` parameter (accessors)', functio
 		2.0
 	];
 
-	v = nancount( 5, toAccessorArray( x ), -2 );
+	v = gnancount( 5, toAccessorArray( x ), -2 );
 
 	t.strictEqual( v, 4, 'returns expected value' );
 	t.end();
@@ -194,7 +194,7 @@ tape( 'if provided a `stride` parameter equal to `0`, the function returns `N` i
 
 	x = [ 1.0, -2.0, -4.0, 5.0, 3.0 ];
 
-	v = nancount( x.length, x, 0 );
+	v = gnancount( x.length, x, 0 );
 	t.strictEqual( v, x.length, 'returns expected value' );
 
 	t.end();
@@ -206,7 +206,7 @@ tape( 'if provided a `stride` parameter equal to `0`, the function returns `N` i
 
 	x = [ 1.0, -2.0, -4.0, 5.0, 3.0 ];
 
-	v = nancount( x.length, toAccessorArray( x ), 0 );
+	v = gnancount( x.length, toAccessorArray( x ), 0 );
 	t.strictEqual( v, x.length, 'returns expected value' );
 
 	t.end();
@@ -218,7 +218,7 @@ tape( 'if provided a `stride` parameter equal to `0`, the function returns `0` i
 
 	x = [ NaN, -2.0, -4.0, 5.0, 3.0 ];
 
-	v = nancount( x.length, x, 0 );
+	v = gnancount( x.length, x, 0 );
 	t.strictEqual( v, 0, 'returns expected value' );
 
 	t.end();
@@ -230,7 +230,7 @@ tape( 'if provided a `stride` parameter equal to `0`, the function returns `0` i
 
 	x = [ NaN, -2.0, -4.0, 5.0, 3.0 ];
 
-	v = nancount( x.length, toAccessorArray( x ), 0 );
+	v = gnancount( x.length, toAccessorArray( x ), 0 );
 	t.strictEqual( v, 0, 'returns expected value' );
 
 	t.end();
@@ -257,7 +257,7 @@ tape( 'the function supports view offsets', function test( t ) {
 
 	x1 = new Float64Array( x0.buffer, x0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
 
-	v = nancount( 5, x1, 2 );
+	v = gnancount( 5, x1, 2 );
 	t.strictEqual( v, 4, 'returns expected value' );
 
 	t.end();

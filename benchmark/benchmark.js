@@ -28,7 +28,7 @@ var bernoulli = require( '@stdlib/random-base-bernoulli' );
 var filledarrayBy = require( '@stdlib/array-filled-by' );
 var pow = require( '@stdlib/math-base-special-pow' );
 var pkg = require( './../package.json' ).name;
-var nancount = require( './../lib/main.js' );
+var gnancount = require( './../lib/main.js' );
 
 
 // FUNCTIONS //
@@ -69,7 +69,7 @@ function createBenchmark( len ) {
 
 		b.tic();
 		for ( i = 0; i < b.iterations; i++ ) {
-			v = nancount( x.length, x, 1 );
+			v = gnancount( x.length, x, 1 );
 			if ( isnan( v ) ) {
 				b.fail( 'should not return NaN' );
 			}

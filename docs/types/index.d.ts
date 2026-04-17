@@ -28,7 +28,7 @@ import { NumericArray, Collection, AccessorArrayLike } from '@stdlib/types/array
 type InputArray = NumericArray | Collection<number> | AccessorArrayLike<number>;
 
 /**
-* Interface describing `nancount`.
+* Interface describing `gnancount`.
 */
 interface Routine {
 	/**
@@ -42,7 +42,7 @@ interface Routine {
 	* @example
 	* var x = [ 1.0, -2.0, NaN, 2.0 ];
 	*
-	* var v = nancount( x.length, x, 1 );
+	* var v = gnancount( x.length, x, 1 );
 	* // returns 3
 	*/
 	( N: number, x: InputArray, strideX: number ): number;
@@ -59,7 +59,7 @@ interface Routine {
 	* @example
 	* var x = [ 1.0, -2.0, NaN, 2.0 ];
 	*
-	* var v = nancount.ndarray( x.length, x, 1, 0 );
+	* var v = gnancount.ndarray( x.length, x, 1, 0 );
 	* // returns 3
 	*/
 	ndarray( N: number, x: InputArray, strideX: number, offsetX: number ): number;
@@ -76,18 +76,18 @@ interface Routine {
 * @example
 * var x = [ 1.0, -2.0, NaN, 2.0 ];
 *
-* var v = nancount( x.length, x, 1 );
+* var v = gnancount( x.length, x, 1 );
 * // returns 3
 *
 * @example
 * var x = [ 1.0, -2.0, NaN, 2.0 ];
 *
-* var v = nancount.ndarray( x.length, x, 1, 0 );
+* var v = gnancount.ndarray( x.length, x, 1, 0 );
 * // returns 3
 */
-declare var nancount: Routine;
+declare var gnancount: Routine;
 
 
 // EXPORTS //
 
-export = nancount;
+export = gnancount;

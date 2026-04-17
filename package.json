@@ -1,5 +1,5 @@
 {
-  "name": "@stdlib/stats-strided-nancount",
+  "name": "@stdlib/blas-ext-base-gnancount",
   "version": "0.0.0",
   "description": "Calculate the number of non-`NaN` elements in a strided array.",
   "license": "Apache-2.0",
@@ -31,7 +31,7 @@
   "homepage": "https://stdlib.io",
   "repository": {
     "type": "git",
-    "url": "git://github.com/stdlib-js/stats-strided-nancount.git"
+    "url": "git://github.com/stdlib-js/blas-ext-base-gnancount.git"
   },
   "bugs": {
     "url": "https://github.com/stdlib-js/stdlib/issues"
@@ -79,7 +79,7 @@
     "mathematics",
     "math",
     "count",
-    "nancount",
+    "gnancount",
     "number",
     "length",
     "size",

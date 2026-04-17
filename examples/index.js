@@ -21,7 +21,7 @@
 var uniform = require( '@stdlib/random-base-uniform' );
 var filledarrayBy = require( '@stdlib/array-filled-by' );
 var bernoulli = require( '@stdlib/random-base-bernoulli' );
-var nancount = require( './../lib' );
+var gnancount = require( './../lib' );
 
 function rand() {
 	if ( bernoulli( 0.8 ) < 1 ) {
@@ -33,5 +33,5 @@ function rand() {
 var x = filledarrayBy( 10, 'float64', rand );
 console.log( x );
 
-var v = nancount( x.length, x, 1 );
+var v = gnancount( x.length, x, 1 );
 console.log( v );
