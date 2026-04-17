@@ -48,13 +48,18 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import gnancount from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gnancount@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/blas-ext-base-gnancount/tags). For example,
+
+```javascript
 import gnancount from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gnancount@v0.0.0-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gnancount@v0.0.0-esm/index.mjs';
+import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gnancount@esm/index.mjs';
 ```
 
 #### gnancount( N, x, strideX )
@@ -151,7 +156,7 @@ var v = gnancount.ndarray( 5, x, 2, 1 );
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-uniform@esm/index.mjs';
 import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@esm/index.mjs';
 import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-bernoulli@esm/index.mjs';
-import gnancount from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gnancount@v0.0.0-esm/index.mjs';
+import gnancount from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gnancount@esm/index.mjs';
 
 function rand() {
     if ( bernoulli( 0.8 ) < 1 ) {
