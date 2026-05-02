@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-04-17)
+## Unreleased (2026-05-02)
 
 <section class="features">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`6b5e5b7`](https://github.com/stdlib-js/stdlib/commit/6b5e5b7e959c0553d16dc40fef9af38ed3c318d2) - **style:** remove empty line [(#11885)](https://github.com/stdlib-js/stdlib/pull/11885) _(by stdlib-bot)_
 -   [`c84f0ca`](https://github.com/stdlib-js/stdlib/commit/c84f0caa56429dc035cfb22a105d62a3178b5c87) - **feat:** add `blas/ext/base/gnancount` _(by Athan Reines)_
 
 </details>
