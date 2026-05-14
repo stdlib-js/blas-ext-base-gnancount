@@ -78,6 +78,8 @@
     "stats",
     "mathematics",
     "math",
+    "blas",
+    "extended",
     "count",
     "gnancount",
     "number",
